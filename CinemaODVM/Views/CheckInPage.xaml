@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i18n="clr-namespace:CinemaODVM.Helpers"
+             mc:Ignorable="d"
+             x:Class="CinemaODVM.Views.CheckInPage"
+             Title="{i18n:Translate CheckIn}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding Imagen}" Grid.ColumnSpan="2"/>
+
+        <Label Text="{i18n:Translate Movie}" FontAttributes="Bold" Grid.Row="1"/>
+        <Label Text="{i18n:Translate Title}" Grid.Row="2"/>
+        <Label Text="{Binding Nombre}" Grid.Column="1" Grid.Row="2"/>
+        <Label Text="{i18n:Translate Date}" Grid.Row="3"/>
+        <Label Text="{Binding FechaEstreno}" Grid.Column="1" Grid.Row="3"/>
+        
+        <Label Text="{i18n:Translate Function}" Grid.Row="4" FontAttributes="Bold"/>
+        <Label Text="{i18n:Translate Cinema}" Grid.Row="5"/>
+        <Label Text="{Binding FuncionSeleccionada.Cinema}" Grid.Column="1" Grid.Row="5"/>
+        <Label Text="{i18n:Translate Room}" Grid.Row="6"/>
+        <Label Text="{Binding FuncionSeleccionada.Sala}" Grid.Column="1" Grid.Row="6"/>
+        <Label Text="{i18n:Translate City}" Grid.Row="7"/>
+        <Label Text="{Binding FuncionSeleccionada.Ciudad}" Grid.Column="1" Grid.Row="7"/>
+        
+        <Label Text="{i18n:Translate TicketsLbl}" Grid.Row="8" FontAttributes="Bold"/>
+        <Label Text="{i18n:Translate Price}" Grid.Row="9"/>
+        <Label Text="{Binding FuncionSeleccionada.Precio}" Grid.Column="1" Grid.Row="9"/>
+        <Label Text="{i18n:Translate Quantity}" Grid.Row="10"/>
+        <Label Text="{Binding Tiquetes}" Grid.Column="1" Grid.Row="10"/>
+
+        <Label Text="{i18n:Translate TotalPrice}" Grid.Row="11" FontAttributes="Bold"/>
+        <Label Text="{Binding PrecioTotal}" Grid.Column="1" Grid.Row="11"/>
+
+        <Button Style="{StaticResource btnBuy}" Clicked="btn_Clicked" Grid.Row="12" Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>

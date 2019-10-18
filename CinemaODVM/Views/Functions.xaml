@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i18n="clr-namespace:CinemaODVM.Helpers"
+             mc:Ignorable="d"
+             x:Class="CinemaODVM.Views.Functions"
+             Title="{i18n:Translate Functions}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Style="{StaticResource labelFnTitle}"/>
+                <Label Style="{StaticResource labelFnDate}" Grid.Row="1"/>
+                <Label Style="{StaticResource labelFnTickets}" Grid.Row="2"/>
+
+                <Label Text="{Binding Nombre}" Grid.Column="1"/>
+                <Label Text="{Binding FechaEstreno}" Grid.Row="1" Grid.Column="1"/>
+                <Entry Text="" Grid.Row="2" Grid.Column="1" x:Name="TextTickets" FontSize="Small"/>
+            </Grid>
+            <ListView ItemsSource="{Binding Funciones}" ItemSelected="Function_Selected" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Cinema}"/>
+                                    <Label Text=" -- "/>
+                                    <Label Text="{Binding Sala}"/>
+                                    <Label Text=" -- "/>
+                                    <Label Text="{Binding Ciudad}"/>
+                                </StackLayout>
+                                <Label Text="{Binding Precio}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

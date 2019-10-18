@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i18n="clr-namespace:CinemaODVM.Helpers"
+             mc:Ignorable="d"
+             x:Class="CinemaODVM.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry" x:Key="inputUser">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="Placeholder" Value="{i18n:Translate User}"/>
+                <Setter Property="MaxLength" Value="15"/>
+                <Setter Property="Margin" Value="50, 10"/>
+            </Style>
+            <Style TargetType="Entry" x:Key="inputPassword">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="Placeholder" Value="{i18n:Translate Password}"/>
+                <Setter Property="MaxLength" Value="15"/>
+                <Setter Property="IsPassword" Value="True"/>
+                <Setter Property="Margin" Value="50, 10"/>
+            </Style>
+            <Style TargetType="Button" x:Key="btnLogin">
+                <Setter Property="Text" Value="{i18n:Translate Enter}"/>
+                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="Margin" Value="50, 0, 50, 150"/>
+                <Setter Property="BackgroundColor" Value="LightBlue"/>
+            </Style>
+            <Style TargetType="Button" x:Key="btnBuy">
+                <Setter Property="Text" Value="{i18n:Translate Buy}"/>
+                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="BackgroundColor" Value="LightGreen"/>
+            </Style>
+            <Style TargetType="Label" x:Key="labelTitle">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style TargetType="Label" x:Key="labelRecomendation">
+                <Setter Property="FontSize" Value="10"/>
+                <Setter Property="TextColor" Value="Blue"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+            </Style>
+            <Style TargetType="Image" x:Key="imgMovie">
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="50"/>
+            </Style>
+            <Style TargetType="Label" x:Key="labelFnTitle">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Text" Value="{i18n:Translate Title}"/>
+            </Style>
+            <Style TargetType="Label" x:Key="labelFnDate">
+                <Setter Property="FontSize" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Text" Value="{i18n:Translate Date}"/>
+            </Style>
+            <Style TargetType="Label" x:Key="labelFnTickets">
+                <Setter Property="FontSize" Value="10"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Text" Value="{i18n:Translate Tickets}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

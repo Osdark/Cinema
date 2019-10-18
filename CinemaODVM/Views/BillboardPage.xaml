@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i18n="clr-namespace:CinemaODVM.Helpers"
+             mc:Ignorable="d"
+             x:Class="CinemaODVM.Views.BillboardPage"
+             Title="{i18n:Translate Billboard}">
+
+    <ListView x:Name="Movies" HasUnevenRows="True" ItemSelected="Movie_Selected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding Imagen}" Style="{StaticResource imgMovie}" Grid.RowSpan="7"/>
+                        <Label Text="{Binding Nombre}" Grid.Column="1" Style="{StaticResource labelTitle}"/>
+                        <Label Text="{i18n:Translate Premier}" Grid.Column="1" Grid.Row="1" Style="{StaticResource labelTitle}"/>
+                        <Label Text="{Binding FechaEstreno}" Grid.Column="1" Grid.Row="2"/>
+                        <Label Text="{i18n:Translate Gender}" Grid.Column="1" Grid.Row="3" Style="{StaticResource labelTitle}"/>
+                        <Label Text="{Binding Genero}" Grid.Column="1" Grid.Row="4"/>
+                        <Label Text="{i18n:Translate Recomendation}" Grid.Column="1" Grid.Row="5" Style="{StaticResource labelRecomendation}"/>
+                        <Label Text="{Binding Recomendacion}" Grid.Column="1" Grid.Row="6" Style="{StaticResource labelRecomendation}"/>
+                        <Label Text="{i18n:Translate Duration}" Grid.Column="2" Grid.Row="5" Style="{StaticResource labelTitle}"/>
+                        <Label Text="{Binding Duracion}" Grid.Column="2" Grid.Row="6" Style="{StaticResource labelTitle}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
